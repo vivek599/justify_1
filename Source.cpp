@@ -4,6 +4,7 @@ using namespace std;
 
 #include <vector>
 #include <string>
+#include <sstream>
 
 vector<string> justify( string inputStr, int justifyWidth)
 {
@@ -11,26 +12,15 @@ vector<string> justify( string inputStr, int justifyWidth)
 
 	vector<string> allWords;
 
-	string tmpStr = inputStr;
+	stringstream stream(inputStr);
 
-	size_t spacePos = 0;
-
-	while (true)
+	while (stream.good())
 	{
-		spacePos = tmpStr.find(' ');
-		if (spacePos == string::npos)
-		{
-			allWords.push_back(tmpStr);
-			break;
-		}
-
-		allWords.push_back(tmpStr.substr(0, spacePos));
-
-		tmpStr = tmpStr.substr(spacePos + 1, tmpStr.length());
-
+		string str;
+		getline(stream, str, ' ');
+		allWords.push_back(str);
 	}
 
-	string lineStr;
 	int i = 0;
 
 	while (i < allWords.size())
@@ -47,6 +37,7 @@ vector<string> justify( string inputStr, int justifyWidth)
 	cout << "justifyWidth = " << justifyWidth << endl;
 
 	i = 0;
+	string lineStr;
 	while (i < allWords.size())
 	{
 		int curWordWidth = allWords[i].length();
