@@ -122,11 +122,11 @@ vector<string> justify( string inputStr, int justifyWidth)
 
 int main()
 {
-	string inputStr = "Proin nisi turpis, dignissim sed euismod in, \
-tristique sed turpis. Integer consequat nunc eget \
-vulputate dignissim. Phasellus luctus sapien a nulla \
-facilisis, sed maximus lacus lacinia. Cras accumsan molestie \
-dui tortor blandit leo, et fermentum arcu ante sit amet justo.";
+	string inputStr =	"Proin nisi turpis, dignissim sed euismod in, "
+				"tristique sed turpis. Integer consequat nunc eget "
+				"vulputate dignissim. Phasellus luctus sapien a nulla "
+				"facilisis, sed maximus lacus lacinia. Cras accumsan molestie "
+				"dui tortor blandit leo, et fermentum arcu ante sit amet justo.";
 
 	int justifyWidth = 50;
 
